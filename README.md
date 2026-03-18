@@ -56,11 +56,11 @@ testTaskProject/
 
 ## Команды
 
-`./gradlew clean` | Очистка проекта |
-`./gradlew build` | Сборка проекта |
-`./gradlew test` | Запуск всех тестов |
-`./gradlew allureReport` | Генерация Allure отчета |
-`./gradlew allureServe` | Запуск Allure сервера |
+`./gradlew clean` | Очистка проекта |  
+`./gradlew build` | Сборка проекта |  
+`./gradlew test` | Запуск всех тестов |  
+`./gradlew allureReport` | Генерация Allure отчета |  
+`./gradlew allureServe` | Запуск Allure сервера |  
 
 ## Контакты
 
