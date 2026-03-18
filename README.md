@@ -1,4 +1,3 @@
-```markdown
 # Test Task Project — API автотесты
 
 Проект для автоматизации тестирования API с использованием Kotlin и современного стека инструментов. 
@@ -37,7 +36,6 @@
 
 ## Полная структура проекта
 
-```
 testTaskProject/
 │
 ├── docs/                      # Документация
@@ -65,8 +63,6 @@ testTaskProject/
 ├── gradle.properties
 ├── settings.gradle.kts
 └── README.md
-```
-```
 
 ## Команды
 
