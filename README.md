@@ -1,3 +1,4 @@
+```markdown
 # Test Task Project — API автотесты
 
 Проект для автоматизации тестирования API с использованием Kotlin и современного стека инструментов. 
@@ -12,6 +13,7 @@
 
 ## Структура проекта
 
+```
 testTaskProject/
 │
 ├── docs/
@@ -52,21 +54,23 @@ testTaskProject/
 ├── gradle.properties
 ├── settings.gradle.kts
 └── README.md
+```
 
 ## Запуск тестов
 
-
+```bash
 ./gradlew clean              # Очистка проекта
 ./gradlew build              # Сборка проекта
 ./gradlew test               # Запуск всех тестов
-./gradlew test --tests *ClassName    # Запуск конкретного класса
-./gradlew test -DincludeTags=smoke   # Запуск тестов с тегом
+./gradlew test --tests *ClassName   # Запуск конкретного класса
+./gradlew test -DincludeTags=smoke  # Запуск тестов с тегом
 ./gradlew allureReport       # Генерация Allure отчета
 ./gradlew allureServe        # Запуск Allure сервера
-
+```
 
 ## Контакты
 
-Автор: Dmitrii Kuzmi4ev  
-GitHub: @DmitriiKuzmi4ev  
-Репозиторий: testTaskProject
+**Автор:** Dmitrii Kuzmi4ev  
+**GitHub:** [@DmitriiKuzmi4ev](https://github.com/DmitriiKuzmi4ev)  
+**Репозиторий:** [testTaskProject](https://github.com/DmitriiKuzmi4ev/testTaskProject)
+```
