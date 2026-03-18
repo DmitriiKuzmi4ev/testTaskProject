@@ -27,32 +27,32 @@
 ## Полная структура проекта
 
 testTaskProject/
-│
-├── docs/                      # Документация
-│   ├── CHECKLIST.md           # Чек-лист ручного тестирования
-│   └── TESTCASES.md           # Тест-кейсы
-│
-├── src/
-│   ├── main/kotlin/com/testtaskproject/
-│   │   ├── models/        # Data классы
-│   │   ├── clients/       # API клиенты
-│   │   ├── config/        # Конфигурации
-│   │   └── utils/         # Утилиты
-│   └── test/kotlin/com/testtaskproject/
-│       ├── api/           # API тесты
-│       ├── providers/     # Провайдеры данных
-│       ├── extensions/    # JUnit extensions
-│       └── assertions/    # Кастомные проверки
-│
-├── resources/              # Ресурсы
-│   ├── logback.xml        # Конфигурация логирования
-│   └── application.properties # Свойства приложения
-│
-├── gradle/wrapper/
-├── build.gradle.kts
-├── gradle.properties
-├── settings.gradle.kts
-└── README.md
+docs/
+CHECKLIST.md              # Чек-лист ручного тестирования  
+TESTCASES.md              # Тест-кейсы  
+  
+src/
+main/kotlin/com/testtaskproject/  
+models/                  # Data классы  
+clients/                  # API клиенты  
+config/                    # Конфигурации  
+utils/                      # Утилиты  
+
+    test/kotlin/com/testtaskproject/  
+      api/                        # API тесты  
+      providers/                    # Провайдеры данных  
+      extensions/                     # JUnit extensions  
+      assertions/                       # Кастомные проверки  
+
+resources/  
+logback.xml                 # Конфигурация логирования  
+application.properties       # Свойства приложения  
+  
+gradle/wrapper/  
+build.gradle.kts  
+gradle.properties  
+settings.gradle.kts  
+README.md  
 
 ## Команды
 
