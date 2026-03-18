@@ -28,21 +28,21 @@
 
     testTaskProject/
         docs/
-            CHECKLIST.md                   # Чек-лист ручного тестирования  
-            TESTCASES.md                   # Тест-кейсы  
+        ----CHECKLIST.md                   # Чек-лист ручного тестирования  
+        ----TESTCASES.md                   # Тест-кейсы  
   
         src/
-            main/kotlin/com/testtaskproject/  
-                models/                    # Data классы  
-                clients/                   # API клиенты  
-                config/                    # Конфигурации  
-                utils/                     # Утилиты  
+        ----main/kotlin/com/testtaskproject/  
+        --------models/                    # Data классы  
+        --------clients/                   # API клиенты  
+        --------config/                    # Конфигурации  
+        --------utils/                     # Утилиты  
 
-            test/kotlin/com/testtaskproject/  
-                api/                       # API тесты  
-                providers/                 # Провайдеры данных  
-                extensions/                # JUnit extensions  
-                assertions/                # Кастомные проверки  
+        ____test/kotlin/com/testtaskproject/  
+        --------api/                       # API тесты  
+        --------providers/                 # Провайдеры данных  
+        --------extensions/                # JUnit extensions  
+        --------assertions/                # Кастомные проверки  
 
     resources/  
     logback.xml                            # Конфигурация логирования  
