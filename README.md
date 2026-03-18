@@ -1,4 +1,3 @@
-
 # Test Task Project — API автотесты
 
 Проект для автоматизации тестирования API с использованием Kotlin и современного стека инструментов. 
@@ -7,66 +6,67 @@
 
 ## Содержание
 
-- [Структура проекта](#полная-структура-проекта)
-- [Запуск тестов](#команды-для-запуска)
+- [Структура проекта](#структура-проекта)
+- [Запуск тестов](#запуск-тестов)
 - [Контакты](#контакты)
 
-## Полная структура проекта:
+## Структура проекта
 
 testTaskProject/
 │
-├── 📁 docs/                                     # Тестовая документация
-│   ├── 📄 CHECKLIST.md                           
-│   └── 📄 TESTCASES.md                           
+├── docs/
+│   ├── CHECKLIST.md                   # Чек-лист ручного тестирования
+│   └── TESTCASES.md                   # Детальные тест-кейсы
 │
-├── 📁 src/
-│   ├── 📁 main/kotlin/com/testtaskproject/        
-│   │   ├── 📁 models/                           # DTO/POJO классы (Request/Response модели)        
-│   │   ├── 📁 clients/                          # HTTP клиенты (RestAssured) и DB клиенты (Spring JDBC)  
-│   │   ├── 📁 config/                           # Конфигурации (URL, credentials, properties)  
-│   │   ├── 📁 utils/                            # Утилиты (хелперы, экстеншны, работа с файлами)   
-│   │   └── 📁 mocks/                            # Wiremock моки для внешних сервисов   
-│   │       ├── 📄 WireMockServerManager.kt      # Управление запуском/остановкой Wiremock сервера    
-│   │       └── 📁 stubs/                        # Пакет с конкретными стабами     
-│   │           ├── 📄 UserStubs.kt              # Стабы для user endpoints
-│   │           └── 📄 PaymentStubs.kt           # Стабы для payment endpoints
+├── src/
+│   ├── main/kotlin/com/testtaskproject/
+│   │   ├── models/                     # DTO/POJO классы для запросов/ответов
+│   │   ├── clients/                     # HTTP клиенты (RestAssured) и клиенты БД
+│   │   ├── config/                       # Конфигурации (URL, credentials)
+│   │   ├── utils/                         # Утилиты (хелперы, работа с файлами)
+│   │   └── mocks/                         # Wiremock моки
+│   │       ├── WireMockServerManager.kt   # Управление Wiremock сервером
+│   │       └── stubs/                      # Конкретные стабы
+│   │           ├── UserStubs.kt            # Стабы для user endpoints
+│   │           └── PaymentStubs.kt         # Стабы для payment endpoints
 │   │
-│   └── 📁 test/kotlin/com/testtaskproject/          
-│       ├── 📁 api/                              # Тестовые классы (UserApiTest, PaymentApiTest)     
-│       ├── 📁 steps/                            # Шаги с @Step для Allure (UserSteps, PaymentSteps)     
-│       ├── 📁 providers/                        # Генерация тестовых данных (Faker)     
-│       ├── 📁 extensions/                       # JUnit extensions   
-│       ├── 📁 assertions/                       # Кастомные проверки (ResponseAssertions)      
-│       ├── 📁 specs/                            # Rest Assured спецификации (RequestSpecs, ResponseSpecs)      
-│       └── 📁 annotation/                       # Кастомные аннотации (@ApiLogin, @WithMocks)      
+│   └── test/kotlin/com/testtaskproject/
+│       ├── api/                            # Тестовые классы
+│       ├── steps/                          # Шаги с @Step для Allure
+│       ├── providers/                       # Генерация тестовых данных (Faker)
+│       ├── extensions/                       # JUnit extensions
+│       ├── assertions/                        # Кастомные проверки
+│       ├── specs/                             # Rest Assured спецификации
+│       └── annotation/                         # Кастомные аннотации
 │
-├── 📁 resources/                                      
-│   ├── 📄 logback.xml                           # Конфигурация логирования      
-│   ├── 📄 application.properties                # Настройки приложения (URL, БД)      
-│   ├── 📁 mocks/                                      
-│   │   ├── 📁 __files/                          # Тела ответов      
-│   │   └── 📁 mappings/                         # Маппинги запросов      
-│   └── 📁 schemas/                                     
+├── resources/
+│   ├── logback.xml                        # Конфигурация логирования
+│   ├── application.properties              # Настройки приложения
+│   ├── mocks/
+│   │   ├── __files/                        # Тела ответов (JSON)
+│   │   └── mappings/                        # Маппинги запросов
+│   └── schemas/                             # JSON схемы для валидации
 │
-├── 📁 gradle/wrapper/
-├── 📄 build.gradle.kts                                 
-├── 📄 gradle.properties                                
-├── 📄 settings.gradle.kts                              
-└── 📄 README.md           
+├── gradle/wrapper/
+├── build.gradle.kts
+├── gradle.properties
+├── settings.gradle.kts
+└── README.md
 
-## Команды для запуска:
-
-./gradlew clean	- Очистка проекта
-./gradlew build	- Сборка проекта
-./gradlew test	- Запуск всех тестов
-./gradlew test --tests *ClassName	- Запуск конкретного класса
-./gradlew test -DincludeTags=smoke	- Запуск тестов с тегом
-./gradlew allureReport	- Генерация Allure отчета
-./gradlew allureServe	- Запуск Allure сервера
+## Запуск тестов
 
 
-## Контакты:
+./gradlew clean              # Очистка проекта
+./gradlew build              # Сборка проекта
+./gradlew test               # Запуск всех тестов
+./gradlew test --tests *ClassName    # Запуск конкретного класса
+./gradlew test -DincludeTags=smoke   # Запуск тестов с тегом
+./gradlew allureReport       # Генерация Allure отчета
+./gradlew allureServe        # Запуск Allure сервера
 
-Автор: Dmitrii Kuzmi4ev
-GitHub: @DmitriiKuzmi4ev
+
+## Контакты
+
+Автор: Dmitrii Kuzmi4ev  
+GitHub: @DmitriiKuzmi4ev  
 Репозиторий: testTaskProject
