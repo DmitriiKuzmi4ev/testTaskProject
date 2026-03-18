@@ -13,15 +13,15 @@
 
 ## Стэк технологий
 
-**Язык** - Kotlin
-**Сборка** - Gradle (Kotlin DSL)
-**Тестирование** - JUnit 5, Rest Assured
-**Отчетность** - Allure
-**Мокирование** - Wiremock
-**Работа с данными** - Faker, Spring JDBC
-**Логирование** - Logback, SLF4J, p6spy
-**UI тесты (опционально)** - Selenide
-**Брокеры сообщений** - Apache Kafka
+**Язык** - Kotlin  
+**Сборка** - Gradle (Kotlin DSL)  
+**Тестирование** - JUnit 5, Rest Assured  
+**Отчетность** - Allure  
+**Мокирование** - Wiremock  
+**Работа с данными** - Faker, Spring JDBC  
+**Логирование** - Logback, SLF4J, p6spy  
+**UI тесты (опционально)** - Selenide  
+**Брокеры сообщений** - Apache Kafka  
 **CI/CD** - GitLab CI
 
 ## Полная структура проекта
