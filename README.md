@@ -38,7 +38,7 @@
                 config/                    # Конфигурации  
                 utils/                     # Утилиты  
 
-        test/kotlin/com/testtaskproject/  
+            test/kotlin/com/testtaskproject/  
                 api/                       # API тесты  
                 providers/                 # Провайдеры данных  
                 extensions/                # JUnit extensions  
