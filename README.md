@@ -5,108 +5,80 @@
 Реализована слоистая архитектура, поддержка мокирования через Wiremock, интеграция с Allure для отчетности 
 и CI/CD через GitLab CI.
 
-## **Содержание**
+## Содержание
 
-- [Структура проекта](#структура-проекта)
+- [Стэк технологий](#Стэк технологий)
+- [Архитектура проекта](#архитектура-проекта)
+- [Документация](#документация)
 - [Запуск тестов](#запуск-тестов)
-- [Контакты](#контакты)
+- [Allure отчетность](#allure-отчетность)
+- [Работа с моками](#работа-с-моками)
+- [Работа с БД](#работа-с-бд)
+- [GitLab CI интеграция](#gitlab-ci-интеграция)
+- [Структура проекта](#структура-проекта)
+- [Команды](#команды)
 
----
+## Стэк технологий
 
-## **Структура проекта**
+| **Язык** | Kotlin |
+| **Сборка** | Gradle (Kotlin DSL) |
+| **Тестирование** | JUnit 5, Rest Assured |
+| **Отчетность** | Allure |
+| **Мокирование** | Wiremock |
+| **Работа с данными** | Faker, Spring JDBC |
+| **Логирование** | Logback, SLF4J, p6spy |
+| **UI тесты (опционально)** | Selenide |
+| **Брокеры сообщений** | Apache Kafka |
+| **CI/CD** | GitLab CI |
+
+## Архитектура проекта
+
+Проект построен по принципам слоистой архитектуры с четким разделением ответственности.
+
+## Полная структура проекта
 
 ```
 testTaskProject/
-docs/
-CHECKLIST.md                   # Чек-лист ручного тестирования
-TESTCASES.md                   # Детальные тест-кейсы
-
-src/
-main/kotlin/com/testtaskproject/
-models/                       # DTO/POJO классы для запросов/ответов
-clients/                       # HTTP клиенты (RestAssured) и клиенты БД
-config/                         # Конфигурации (URL, credentials)
-utils/                           # Утилиты (хелперы, работа с файлами)
-mocks/                           # Wiremock моки
-WireMockServerManager.kt       # Управление Wiremock сервером
-stubs/                         # Конкретные стабы
-UserStubs.kt                  # Стабы для user endpoints
-PaymentStubs.kt               # Стабы для payment endpoints
-
-    test/kotlin/com/testtaskproject/
-      api/                             # Тестовые классы
-      steps/                           # Шаги с @Step для Allure
-      providers/                        # Генерация тестовых данных (Faker)
-      extensions/                        # JUnit extensions
-      assertions/                         # Кастомные проверки
-      specs/                              # Rest Assured спецификации
-      annotation/                          # Кастомные аннотации
-
-resources/
-logback.xml                        # Конфигурация логирования
-application.properties              # Настройки приложения
-mocks/
-__files/                           # Тела ответов (JSON)
-mappings/                           # Маппинги запросов
-schemas/                             # JSON схемы для валидации
-
-gradle/wrapper/
-build.gradle.kts
-gradle.properties
-settings.gradle.kts
-README.md
+│
+├── docs/                      # Документация
+│   ├── CHECKLIST.md           # Чек-лист ручного тестирования
+│   └── TESTCASES.md           # Тест-кейсы
+│
+├── src/
+│   ├── main/kotlin/com/testtaskproject/
+│   │   ├── models/        # Data классы
+│   │   ├── clients/       # API клиенты
+│   │   ├── config/        # Конфигурации
+│   │   └── utils/         # Утилиты
+│   └── test/kotlin/com/testtaskproject/
+│       ├── api/           # API тесты
+│       ├── providers/     # Провайдеры данных
+│       ├── extensions/    # JUnit extensions
+│       └── assertions/    # Кастомные проверки
+│
+├── resources/              # Ресурсы
+│   ├── logback.xml        # Конфигурация логирования
+│   └── application.properties # Свойства приложения
+│
+├── gradle/wrapper/
+├── build.gradle.kts
+├── gradle.properties
+├── settings.gradle.kts
+└── README.md
+```
 ```
 
----
+## Команды
 
-## **Запуск тестов**
+`./gradlew clean` | Очистка проекта |
+`./gradlew build` | Сборка проекта |
+`./gradlew test` | Запуск всех тестов |
+`./gradlew allureReport` | Генерация Allure отчета |
+`./gradlew allureServe` | Запуск Allure сервера |
 
-#### 1. Очистка проекта
+## Контакты
 
-```bash
-./gradlew clean
-```
-
-#### 2. Сборка проекта
-
-```bash
-./gradlew build
-```
-
-#### 3. Запуск всех тестов
-
-```bash
-./gradlew test
-```
-
-#### 4. Запуск конкретного класса
-
-```bash
-./gradlew test --tests *ClassName
-```
-
-#### 5. Запуск тестов с тегом
-
-```bash
-./gradlew test -DincludeTags=smoke
-```
-
-#### 6. Генерация Allure отчета
-
-```bash
-./gradlew allureReport
-```
-
-#### 7. Запуск Allure сервера
-
-```bash
-./gradlew allureServe
-```
-
----
-
-## **Контакты**
-
-**Автор:** [Dmitrii Kuzmi4ev](https://github.com/DmitriiKuzmi4ev)  
+**Автор:** Dmitrii Kuzmi4ev  
+**GitHub:** [@DmitriiKuzmi4ev](https://github.com/DmitriiKuzmi4ev)  
 **Репозиторий:** [testTaskProject](https://github.com/DmitriiKuzmi4ev/testTaskProject)
 ```
