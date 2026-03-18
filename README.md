@@ -5,7 +5,7 @@
 Реализована слоистая архитектура, поддержка мокирования через Wiremock, интеграция с Allure для отчетности 
 и CI/CD через GitLab CI.
 
-## Содержание
+## **Содержание**
 
 - [Структура проекта](#структура-проекта)
 - [Запуск тестов](#запуск-тестов)
@@ -13,7 +13,7 @@
 
 ---
 
-## Структура проекта
+## **Структура проекта**
 
 ```
 testTaskProject/
@@ -59,23 +59,54 @@ README.md
 
 ---
 
-## Запуск тестов
+## **Запуск тестов**
+
+#### 1. Очистка проекта
 
 ```bash
-./gradlew clean              # Очистка проекта
-./gradlew build              # Сборка проекта
-./gradlew test               # Запуск всех тестов
-./gradlew test --tests *ClassName   # Запуск конкретного класса
-./gradlew test -DincludeTags=smoke  # Запуск тестов с тегом
-./gradlew allureReport       # Генерация Allure отчета
-./gradlew allureServe        # Запуск Allure сервера
+./gradlew clean
+```
+
+#### 2. Сборка проекта
+
+```bash
+./gradlew build
+```
+
+#### 3. Запуск всех тестов
+
+```bash
+./gradlew test
+```
+
+#### 4. Запуск конкретного класса
+
+```bash
+./gradlew test --tests *ClassName
+```
+
+#### 5. Запуск тестов с тегом
+
+```bash
+./gradlew test -DincludeTags=smoke
+```
+
+#### 6. Генерация Allure отчета
+
+```bash
+./gradlew allureReport
+```
+
+#### 7. Запуск Allure сервера
+
+```bash
+./gradlew allureServe
 ```
 
 ---
 
-## Контакты
+## **Контакты**
 
-**Автор:** Dmitrii Kuzmi4ev  
-**GitHub:** [@DmitriiKuzmi4ev](https://github.com/DmitriiKuzmi4ev)  
+**Автор:** [Dmitrii Kuzmi4ev](https://github.com/DmitriiKuzmi4ev)  
 **Репозиторий:** [testTaskProject](https://github.com/DmitriiKuzmi4ev/testTaskProject)
 ```
